@@ -5,20 +5,22 @@ class Gallery extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      listing: null,
+      listing: null
     }
   }
 
   componentDidMount() {
-    axios.get('/45')
+    axios.get('http://localhost:3000/45')
       .then(({data}) => {
         this.setState({ listing: data })
       })
   }
 
   render() {
-    return (
+    return (  
       <div>
+        {console.log("here it is ", this.state.listing)}
+        {/* <img src={this.state.listing[0].exterior}/>    */}
         <p>Hello World</p>
       </div>
     )
