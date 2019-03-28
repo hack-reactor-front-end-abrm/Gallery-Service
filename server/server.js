@@ -3,8 +3,7 @@ const { getDataFromDatabase, getListingByID } = require('../database/sqlite.js')
 const path = require('path')
 const app = express()
 
-
-app.use(express.static(path.join(__dirname, '../public/index.html')))
+app.use(express.static(path.join(__dirname, '../dist/')))
 
 app.get('/', (req, res) => {
   getDataFromDatabase((err, results) => {

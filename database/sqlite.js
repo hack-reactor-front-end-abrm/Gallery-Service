@@ -1,16 +1,15 @@
 const sqlite3 = require('sqlite3').verbose()
 const images = require('./images.js')
 
-let db = new sqlite3.Database('./zillow-component.db')
+let db = new sqlite3.Database('./database.sqlite')
 
 const randomImage = (array) => array[(Math.floor((array.length) * Math.random() ))]
 
-db.serialize(function () {
+db.serialize(() => {
   db.run(`DROP TABLE IF EXISTS gallery`)
   db.run(`
   CREATE TABLE gallery (
     id INTEGER NOT NULL,
-
     exterior VARCHAR(100),
     interior_1 VARCHAR(100) NOT NULL,
     interior_2 VARCHAR(100) NOT NULL,
@@ -22,12 +21,16 @@ db.serialize(function () {
     interior_8 VARCHAR(100),
     interior_9 VARCHAR(100),
     PRIMARY KEY (id)
-  )`)
+   )`
+  )
   
-  let stmt = db.prepare(`INSERT INTO gallery (exterior, interior_1, interior_2, interior_3, interior_4, interior_5, interior_6, interior_7, interior_8, interior_9) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+  let galleryInsert = db.prepare(`
+    INSERT INTO gallery (exterior, interior_1, interior_2, interior_3, interior_4, interior_5, interior_6, interior_7, interior_8, interior_9) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+  )
 
   for (let i = 0; i < 100; i++) {
-    stmt.run(
+    galleryInsert.run(
       randomImage(images.exteriors), 
       randomImage(images.interiors), 
       randomImage(images.interiors), 
@@ -41,7 +44,7 @@ db.serialize(function () {
     )
   }
 
-  stmt.finalize()
+  galleryInsert.finalize()
 
 })
 
