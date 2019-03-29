@@ -17,11 +17,12 @@ class Gallery extends Component {
   }
 
   render() {
-    return (  
+
+    const { listing } = this.state
+    
+    return (
       <div>
-        {console.log("here it is ", this.state.listing)}
-        {/* <img src={this.state.listing[0].exterior}/>    */}
-        <p>Hello World</p>
+        {listing ? <img src={listing[0].exterior}/> : <p>Loading...</p>}
       </div>
     )
   }
