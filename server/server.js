@@ -7,13 +7,13 @@ const app = express()
 app.use(cors())
 app.use(express.static(path.join(__dirname, '../dist/')))
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   getDataFromDatabase((err, results) => {
     res.send(results)
   })
 })
 
-app.get('/:id', (req, res) => {
+app.get('/api/:id', (req, res) => {
   getListingByID(req.params.id, (err, results) => {
     res.send(results)
   })
