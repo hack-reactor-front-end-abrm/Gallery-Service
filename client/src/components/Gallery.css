@@ -1,3 +1,14 @@
-.wahoo {
-  background: greenyellow
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.large-tile {
+  height: 416px;
+  width: 550px;
+}
+
+.small-tile {
+  height: 208px;
+  width: 280px;
 }

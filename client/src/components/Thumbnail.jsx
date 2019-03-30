@@ -1,16 +1,20 @@
 import React, { Component, Fragment } from 'react';
+import css from './Gallery.css';
 
 class Thumbnail extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
     return (
-      <Fragment>
-        <img src={this.props.image} width={280} height={208}/> 
-      </Fragment>
-    )
+      <div>
+        <img
+          src={this.props.image[1]}
+          className={this.props.image[0] === 'exterior' ? 'large-tile' : 'small-tile'}
+        />
+      </div>
+    );
   }
 }
 

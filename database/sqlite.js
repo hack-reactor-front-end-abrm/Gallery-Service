@@ -3,7 +3,7 @@ const images = require('./images.js')
 
 let db = new sqlite3.Database('./database.sqlite')
 
-const randomImage = (array) => array[(Math.floor((array.length) * Math.random() ))]
+const randomImage = (array) => array[(Math.floor((array.length) * Math.random()))]
 
 db.serialize(() => {
   db.run(`DROP TABLE IF EXISTS gallery`)
@@ -21,25 +21,23 @@ db.serialize(() => {
     interior_8 VARCHAR(100),
     interior_9 VARCHAR(100),
     PRIMARY KEY (id)
-   )`
-  )
-  
+   )`)
+
   let galleryInsert = db.prepare(`
     INSERT INTO gallery (exterior, interior_1, interior_2, interior_3, interior_4, interior_5, interior_6, interior_7, interior_8, interior_9) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
-  )
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
 
   for (let i = 0; i < 100; i++) {
     galleryInsert.run(
-      randomImage(images.exteriors), 
-      randomImage(images.interiors), 
-      randomImage(images.interiors), 
-      randomImage(images.interiors), 
-      randomImage(images.interiors), 
-      randomImage(images.interiors), 
-      randomImage(images.interiors), 
-      randomImage(images.interiors), 
-      randomImage(images.interiors), 
+      randomImage(images.exteriors),
+      randomImage(images.interiors),
+      randomImage(images.interiors),
+      randomImage(images.interiors),
+      randomImage(images.interiors),
+      randomImage(images.interiors),
+      randomImage(images.interiors),
+      randomImage(images.interiors),
+      randomImage(images.interiors),
       randomImage(images.interiors)
     )
   }
@@ -71,7 +69,3 @@ const getListingByID = (id, callback) => {
 
 module.exports.getDataFromDatabase = getDataFromDatabase
 module.exports.getListingByID = getListingByID
-
-
-
-

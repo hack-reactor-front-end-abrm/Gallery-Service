@@ -1,8 +1,11 @@
 const express = require('express')
-const { getDataFromDatabase, getListingByID } = require('../database/sqlite.js')
 const path = require('path')
 const cors = require('cors')
 const app = express()
+const {
+  getDataFromDatabase,
+  getListingByID
+} = require('../database/sqlite.js')
 
 app.use(cors())
 app.use(express.static(path.join(__dirname, '../dist/')))
