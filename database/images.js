@@ -1,5 +1,4 @@
 module.exports = {
-
   exteriors: [
     'https://storage.googleapis.com/zillow-listing-pictures/exteriors/pexels-photo-1105754.jpeg',
     'https://storage.googleapis.com/zillow-listing-pictures/exteriors/pexels-photo-1488327.jpeg',
@@ -51,4 +50,4 @@ module.exports = {
     'https://storage.googleapis.com/zillow-listing-pictures/interiors/pexels-photo-279746.jpeg',
     'https://storage.googleapis.com/zillow-listing-pictures/interiors/pexels-photo-534151.jpeg'
   ]
-}
+};
