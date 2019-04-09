@@ -4,50 +4,52 @@ const NavBarOne = () => {
   return (
     <nav className="nav-1">
       <ul className="nav1left">
-        <li className="btn">
+        <li className="buy-btn">
           <a href="#">Buy</a>
-          <div className="content-left">
-            <ul>
-              <li>Homes for Sale</li>
-              <li>
-                <a href="#">Homes for sale</a>
-              </li>
-              <li>
-                <a href="#">Foreclosures</a>
-              </li>
-              <li>
-                <a href="#">For sale by owner</a>
-              </li>
-              <li>
-                <a href="#">Open houses</a>
-              </li>
-              <li>
-                <a href="#">New construction</a>
-              </li>
-              <li>
-                <a href="#">Coming soon</a>
-              </li>
-              <li>
-                <a href="#">Recent home sales</a>
-              </li>
-              <li>
-                <a href="#">All homes</a>
-              </li>
-            </ul>
-          </div>
-          <div className="content-right">
-            <ul>
-              <li>Resources</li>
-              <li>
-                <a href="#">Buyers Guide</a>
-              </li>
-              <li>
-                <a href="#">Foreclosure Center</a>
-              </li>
-              <li>
-                <a href="#">Real Estate App</a>
-              </li>
-            </ul>
+          <div className="buy-dropdown">
+            <div className="buy-content-left">
+              <ul>
+                <li>Homes for Sale</li>
+                <li>
+                  <a href="#">Homes for sale</a>
+                </li>
+                <li>
+                  <a href="#">Foreclosures</a>
+                </li>
+                <li>
+                  <a href="#">For sale by owner</a>
+                </li>
+                <li>
+                  <a href="#">Open houses</a>
+                </li>
+                <li>
+                  <a href="#">New construction</a>
+                </li>
+                <li>
+                  <a href="#">Coming soon</a>
+                </li>
+                <li>
+                  <a href="#">Recent home sales</a>
+                </li>
+                <li>
+                  <a href="#">All homes</a>
+                </li>
+              </ul>
+            </div>
+            <div className="buy-content-right">
+              <ul>
+                <li>Resources</li>
+                <li>
+                  <a href="#">Buyers Guide</a>
+                </li>
+                <li>
+                  <a href="#">Foreclosure Center</a>
+                </li>
+                <li>
+                  <a href="#">Real Estate App</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </li>
 

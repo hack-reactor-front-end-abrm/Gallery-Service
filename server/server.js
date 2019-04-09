@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 const { getDataFromDatabase, getListingByID } = require('../database/sqlite.js');
 
 app.use(cors());
@@ -26,6 +27,6 @@ app.get('/api/:id', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Connected to Express server on Port 3000');
 });
