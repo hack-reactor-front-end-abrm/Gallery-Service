@@ -26,8 +26,8 @@ class Gallery extends Component {
   componentDidMount() {
     const { path } = this.state;
     axios
-      .get(`http://18.221.157.2:80/api/${path}`)
-      // .get(`http://localhost:3000/api/${path}`)
+      // .get(`http://18.221.157.2:80/api/${path}`)
+      .get(`http://localhost:3000/api/${path}`)
       .then(({ data }) => {
         return Object.entries(data[0])
           .filter(listing => listing[0] !== 'id')
@@ -101,10 +101,10 @@ class Gallery extends Component {
       <>
         <div className="navbar-container">
           <NavBarOne />
-          <NavBarTwo />
-          <NavBarThree />
+          {/* <NavBarTwo />
+          <NavBarThree /> */}
         </div>
-        <Slideshow listings={listings} openLightbox={this.openLightbox} />
+        {/* <Slideshow listings={listings} openLightbox={this.openLightbox} />
         <Lightbox
           images={listings}
           currentImage={this.state.currentImage}
@@ -120,7 +120,7 @@ class Gallery extends Component {
           spinnerColor={this.props.spinnerColor}
           spinnerSize={this.props.spinnerSize}
           theme={this.props.theme}
-        />
+        /> */}
       </>
     );
   }
