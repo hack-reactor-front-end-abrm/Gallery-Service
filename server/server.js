@@ -2,10 +2,9 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const morgan = require('morgan');
+const { getDataFromDatabase, getListingByID } = require('../database/utils.js');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const { getDataFromDatabase, getListingByID } = require('../database/sqlite.js');
 
 app.use(cors());
 app.use(morgan('dev'));
@@ -27,6 +26,7 @@ app.get('/api/:id', (req, res) => {
   });
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log('Connected to Express server on Port 3000');
 });

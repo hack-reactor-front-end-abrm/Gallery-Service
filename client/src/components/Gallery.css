@@ -133,83 +133,186 @@ table {
 
 body {
   font-family: 'Open Sans', Gotham, gotham, Tahoma, Geneva, sans-serif;
+  height: 10000px;
 }
 
-nav {
+a {
+  text-decoration: none;
+}
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: white;
+}
+
+.main-nav {
   height: 80px;
-  /*   border: 1px solid purple; */
+  /* border: 1px solid purple; */
 }
 
 .nav-one {
   display: flex;
   list-style: none;
-  /*   border: 1px solid red; */
-  margin: 0 3vw;
+  /* border: 1px solid red; */
+  border-bottom: 1px solid rgb(216, 216, 216);
+  margin: 0 4vw;
 }
 
 .nav-one li {
   list-style: none;
   justify-content: center;
   align-self: center;
-  /*   border: 1px solid red; */
+  /* border: 1px solid red; */
   flex: 1;
+}
+
+.nav-one li > span {
+  align-self: center;
+  font-size: 13px;
+  font-weight: 100;
+  /* border: 1px solid saddlebrown; */
 }
 
 .nav-one li:nth-child(1):hover .buy-dropdown {
   display: block;
   position: absolute;
+  z-index: 5;
 }
 
 .nav-one li:nth-child(2):hover .rent-dropdown {
   display: block;
   position: absolute;
+  z-index: 5;
 }
 
 .nav-one li:nth-child(3):hover .sell-dropdown {
   display: block;
   position: absolute;
+  z-index: 5;
 }
 
 .nav-one li:nth-child(4):hover .loans-dropdown {
   display: block;
   position: absolute;
+  z-index: 5;
 }
 
 .nav-one li:nth-child(5):hover .agent-dropdown {
   display: block;
   position: absolute;
+  z-index: 5;
 }
 
-.buy-dropdown {
-  width: 93.8%;
-  display: none;
-  border: 1px solid red;
+/* Container for Buy, Rent, Sell, ... boxes */
+.nav-one-left-block {
+  display: flex;
+  width: 475px;
+  align-items: flex-start;
+  /* border: 1px solid red; */
+  /* flex: 1; */
 }
 
-.rent-dropdown {
-  width: 93.8%;
-  display: none;
+/* Controls each Buy, Rent, Sell, ... Boxes */
+.nav-one-left-block > li {
+  text-align: center;
+  align-content: flex-start;
+  /* border: 1px solid blue; */
+  padding: 21px 10px;
 }
 
-.sell-dropdown {
-  width: 93.8%;
-  display: none;
+/* Controls each Buy, Rent, Sell, ... Text content */
+.nav-one-left-block > li > span {
+  align-content: flex-start;
+  /* padding: 0 30px; */
+  font-size: 13px;
+  font-weight: 400;
+  /* border: 1px solid green; */
 }
 
-.loans-dropdown {
-  width: 93.8%;
-  display: none;
-}
-
-.agent-dropdown {
-  width: 93.8%;
-  display: none;
+.nav-one-right-block {
+  display: flex;
+  width: 475px;
+  align-items: flex-start;
   /* border: 1px solid red; */
 }
 
+.nav-one-right-block > li {
+  text-align: center;
+  align-content: flex-start;
+  padding: 10px;
+  /* border: 1px solid blue; */
+}
+
+.nav-one-right-block > li > span {
+  align-content: flex-start;
+  font-size: 13px;
+  font-weight: 400;
+  /* border: 1px solid green; */
+}
+
+.main-dropdown {
+  display: none;
+  width: 100%;
+  height: 200px;
+  background-color: green;
+}
+
+.main-trigger:hover .main-dropdown {
+  display: block;
+}
+
+.buy-content-left ul li,
+.rent-content-left ul li,
+.sell-content-left ul li,
+.loans-content-left ul li,
+.agent-content-left ul li {
+  text-align: left;
+}
+
+.rent-content-middle ul li,
+.loans-content-middle ul li {
+  text-align: left;
+}
+
+.buy-content-right ul li,
+.rent-content-right ul li,
+.sell-content-right ul li,
+.loans-content-right ul li,
+.agent-content-right ul li {
+  text-align: left;
+}
+
+.buy-dropdown {
+  position: relative;
+  width: 93.8%;
+  display: none;
+  top: 80px;
+  background: white;
+  border-bottom: 1px solid rgb(77, 62, 62);
+  /* border: 1px solid red; */
+}
+
+.buy-dropdown > div > ul > li,
+.rent-dropdown > div > ul > li,
+.sell-dropdown > div > ul > li,
+.loans-dropdown > div > ul > li,
+.agent-dropdown > div > ul > li {
+  padding: 12px;
+  /* border: 1px solid blue; */
+  font-size: 13px;
+}
+
 .buy-content-left {
-  /*   border: 1px solid green; */
+  /* border: 1px solid green; */
+  padding: 17px;
   float: left;
+  /* border-right: 1px solid rgb(216, 216, 216); */
+}
+
+.buy-content-right {
+  padding: 17px;
 }
 
 .buy-content-left ul {
@@ -222,62 +325,134 @@ nav {
   grid-column-end: 3;
 }
 
+.rent-dropdown {
+  width: 93.8%;
+  top: 80px;
+  background: white;
+  right: 40px;
+  display: none;
+  /* border: 1px solid red; */
+}
+
+.rent-dropdown div ul li {
+  padding: 12px;
+}
+
+.sell-dropdown {
+  width: 93.8%;
+  top: 80px;
+  background: white;
+  right: 40px;
+  display: none;
+}
+
+.sell-dropdown div ul li {
+  padding: 12px;
+}
+
+.loans-dropdown {
+  width: 93.8%;
+  top: 80px;
+  background: white;
+  right: 40px;
+  display: none;
+}
+
+.loans-dropdown div ul li {
+  padding: 12px;
+}
+
+.agent-dropdown {
+  width: 93.8%;
+  top: 80px;
+  background: white;
+  right: 40px;
+  display: none;
+  /* border: 1px solid red; */
+}
+
+.agent-dropdown div ul li {
+  padding: 12px;
+}
+
 .rent-content-left {
   /*   border: 1px solid red; */
   float: left;
+  padding: 17px;
 }
 
 .rent-content-middle {
   /*   border: 1px solid green; */
   float: left;
+  padding: 17px;
 }
 
 .rent-content-right {
   /*   border: 1px solid blue; */
+  padding: 17px;
 }
 
 .sell-content-left {
   float: left;
+  padding: 17px;
+}
+
+.sell-content-right {
+  padding: 17px;
 }
 
 .loans-content-left {
   float: left;
+  padding: 17px;
 }
 
 .loans-content-middle {
   float: left;
+  padding: 17px;
+}
+
+.loans-content-right {
+  padding: 17px;
 }
 
 .agent-content-left {
   float: left;
+  padding: 17px;
 }
 
 .agent-content-right {
   /* border: 1px solid blue; */
+  padding: 17px;
 }
 
 .agent-content-left ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  border: 1px solid forestgreen;
 }
 
 .agent-content-left ul li:nth-child(1) {
   grid-column-start: 1;
   grid-column-end: 3;
+  border: 1px solid darkmagenta;
 }
 
 .agent-content-right ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  border: 1px solid blue;
 }
 
 .agent-content-right ul li:nth-child(1) {
   grid-column-start: 1;
   grid-column-end: 3;
+  border: 1px solid red;
 }
 
 .logo {
   padding: 0 35px;
+  /* position: relative;
+  right: 45px; */
 }
 
 .nav-2 {
@@ -354,7 +529,6 @@ nav {
 .footerCaption_2r5qf {
   text-align: center;
   color: rgb(255, 255, 255);
-  font-family: 'Open Sans', Gotham, gotham, Tahoma, Geneva, sans-serif;
   font-size: 15px;
   line-height: 22.5px;
   margin-block-end: 15px;
@@ -364,90 +538,47 @@ nav {
   margin: 0 0 15px 0;
 }
 
-/* .navbar-container {
-  display: grid;
-  grid-template-areas:
-    'nav1'
-    'nav2'
-    'nav3';
-  grid-template-rows: 80px 50px 50px;
-  width: 100%;
-} */
-/* 
-.nav-1 {
-  grid-area: nav1;
-  border-bottom-color: rbg(216, 216, 216);
+/* white nav bar */
+
+#whiteNavBar {
+  clear: both;
+  border-bottom-color: lightgrey;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  display: flex;
-  justify-content: space-between;
-  line-height: 22.5px;
-  margin: 0 80px;
-  overflow-x: visible;
-  overflow-y: visible;
-  position: static;
-  flex-direction: row;
+  height: 50px;
+}
+
+#whiteNavBarPublicViewOwnerView {
+  float: left;
+  font-size: 14px;
+}
+
+#whiteNavBarAddressLinks {
+  float: right;
+  font-size: 12px;
+}
+
+.publicViewOwnerViewText {
+  color: #006aff;
   background-color: white;
 }
 
-.nav1left,
-.nav1right {
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  align-items: center;
+.publicViewOwnerViewText:hover {
+  color: #006aff;
 }
 
-.nav1left {
-  position: relative;
-  list-style-type: none;
+#ownerViewText {
+  color: black;
 }
 
-.btn {
-  font-size: 14px;
-  text-align: center;
+.whiteNavBarAddressLinks {
+  color: lightgrey;
 }
 
-.buy-dropdown {
-  padding-inline-start: 0px;
-  display: none;
-  border: 1px solid red;
-  background-color: #fff;
-  display: none;
-  position: absolute;
-  flex: 1 0 auto;
-  z-index: 1;
-  text-decoration: none;
-  list-style-type: none;
-  width: 100%;
+.whiteNavBarAddressLinks:visited {
+  color: lightgrey;
 }
 
-.buy-content-left {
-  border: 1px solid green;
+.whiteNavBarAddressLinks:hover {
+  color: #006aff;
 }
-
-.buy-content-right {
-  border: 1px solid orangered;
-}
-
-.buy-content-left ul li {
-  list-style: none;
-}
-
-.buy-content-right ul li {
-  list-style: none;
-}
-
-.buy-btn:hover {
-  cursor: pointer;
-}
-
-.buy-btn:hover .buy-dropdown {
-  display: inline-block;
-  position: absolute;
-  top: 80px;
-}
-
-.ddcontent:hover {
-  display: flex;
-} */

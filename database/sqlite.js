@@ -1,14 +1,20 @@
 const sqlite3 = require('sqlite3').verbose();
 const images = require('./images.js');
 
-const db = new sqlite3.Database('./database.sqlite');
+const db = new sqlite3.Database('./database.sqlite', err => {
+  if (err) {
+    console.log('Error starting the SQLite database.');
+  } else {
+    console.log('Connected to SQLite database.');
+  }
+});
 
 const randomImage = array => array[Math.floor(array.length * Math.random())];
 
 db.serialize(() => {
   db.run(`DROP TABLE IF EXISTS gallery`);
   db.run(`
-  CREATE TABLE gallery (
+  CREATE TABLE IF NOT EXISTS gallery (
     id INTEGER NOT NULL,
     exterior VARCHAR(100),
     google_maps VARCHAR(100) NOT NULL,
@@ -29,8 +35,8 @@ db.serialize(() => {
     INSERT INTO gallery (exterior, google_maps, google_street, interior_1, interior_2, interior_3, interior_4, interior_5, interior_6, interior_7, interior_8, interior_9) 
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
 
-  for (let i = 0; i < 100; i++) {
-    galleryInsert.run(
+  async function seed() {
+    let singleInsert = await galleryInsert.run(
       randomImage(images.exteriors),
       'https://storage.googleapis.com/zillow-listing-pictures/googlemaps_static.png',
       'https://storage.googleapis.com/zillow-listing-pictures/googlestreet_static.jpeg',
@@ -44,30 +50,41 @@ db.serialize(() => {
       randomImage(images.interiors),
       randomImage(images.interiors)
     );
+
+    return singleInsert;
   }
+
+  for (let i = 0; i < 100; i++) {
+    seed();
+  }
+
+  // for (let i = 0; i < 100; i++) {
+  //   galleryInsert.run(
+  //     randomImage(images.exteriors),
+  //     'https://storage.googleapis.com/zillow-listing-pictures/googlemaps_static.png',
+  //     'https://storage.googleapis.com/zillow-listing-pictures/googlestreet_static.jpeg',
+  //     randomImage(images.interiors),
+  //     randomImage(images.interiors),
+  //     randomImage(images.interiors),
+  //     randomImage(images.interiors),
+  //     randomImage(images.interiors),
+  //     randomImage(images.interiors),
+  //     randomImage(images.interiors),
+  //     randomImage(images.interiors),
+  //     randomImage(images.interiors)
+  //   );
+  // }
 
   galleryInsert.finalize();
 });
 
-const getDataFromDatabase = callback => {
-  db.all(`SELECT * FROM gallery`, (err, results) => {
-    if (err) {
-      console.error(err);
-    } else {
-      callback(null, results);
-    }
-  });
-};
+// db.close(err => {
+//   if (err) {
+//     console.log('Error closing SQLite database.');
+//   } else {
+//     console.log('Closed the SQLite database connection.');
+//   }
+// });
 
-const getListingByID = (id, callback) => {
-  db.all(`SELECT * from gallery where id = ${id}`, (err, results) => {
-    if (err) {
-      console.error(err);
-    } else {
-      callback(null, results);
-    }
-  });
-};
-
-module.exports.getDataFromDatabase = getDataFromDatabase;
-module.exports.getListingByID = getListingByID;
+console.log('sqlite.js is being ran');
+module.exports = db;
