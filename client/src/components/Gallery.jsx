@@ -12,7 +12,7 @@ class Gallery extends Component {
     super(props);
     this.state = {
       listings: [],
-      path: window.location.href.substring(22)
+      path: window.location.pathname.substring(1)
     };
 
     this.closeLightbox = this.closeLightbox.bind(this);
@@ -26,8 +26,8 @@ class Gallery extends Component {
   componentDidMount() {
     const { path } = this.state;
     axios
-      .get(`http://3.17.60.109:80/api/${path}`)
-      // .get(`http://localhost:3000/api/${path}`)
+      // .get(`http://3.17.60.109:80/api/${path}`)
+      .get(`http://localhost:3000/api/${path}`)
       .then(({ data }) => {
         return Object.entries(data[0])
           .filter(listing => listing[0] !== 'id')
