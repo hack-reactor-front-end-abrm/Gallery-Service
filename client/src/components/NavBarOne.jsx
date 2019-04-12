@@ -239,13 +239,13 @@ const NavBarOne = () => {
                       <a href="#">Home inspectors</a>
                     </li>
                     <li>
-                      <a href="#">Home improvement pros</a>
+                      <a href="#">Home improvement</a>
                     </li>
                     <li>
                       <a href="#">Home builders</a>
                     </li>
                     <li>
-                      <a href="#">Real estate photographers</a>
+                      <a href="#">Real estate</a>
                     </li>
                     <li>
                       <a href="#">Other pros</a>

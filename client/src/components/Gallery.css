@@ -219,7 +219,7 @@ a {
   text-align: center;
   align-content: flex-start;
   /* border: 1px solid blue; */
-  padding: 21px 10px;
+  padding: 24.5px 10px;
 }
 
 /* Controls each Buy, Rent, Sell, ... Text content */
@@ -290,7 +290,7 @@ a {
   display: none;
   top: 80px;
   background: white;
-  border-bottom: 1px solid rgb(77, 62, 62);
+  border: 1px solid rgb(216, 216, 216);
   /* border: 1px solid red; */
 }
 
@@ -331,6 +331,7 @@ a {
   background: white;
   right: 40px;
   display: none;
+  border: 1px solid rgb(216, 216, 216);
   /* border: 1px solid red; */
 }
 
@@ -344,6 +345,7 @@ a {
   background: white;
   right: 40px;
   display: none;
+  border: 1px solid rgb(216, 216, 216);
 }
 
 .sell-dropdown div ul li {
@@ -356,6 +358,7 @@ a {
   background: white;
   right: 40px;
   display: none;
+  border: 1px solid rgb(216, 216, 216);
 }
 
 .loans-dropdown div ul li {
@@ -368,6 +371,7 @@ a {
   background: white;
   right: 40px;
   display: none;
+  border: 1px solid rgb(216, 216, 216);
   /* border: 1px solid red; */
 }
 
@@ -422,31 +426,32 @@ a {
 
 .agent-content-right {
   /* border: 1px solid blue; */
+  float: left;
   padding: 17px;
 }
 
 .agent-content-left ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 1px solid forestgreen;
+  grid-template-columns: repeat(2, 160px);
+  /* border: 1px solid forestgreen; */
 }
 
 .agent-content-left ul li:nth-child(1) {
   grid-column-start: 1;
   grid-column-end: 3;
-  border: 1px solid darkmagenta;
+  /* border: 1px solid darkmagenta; */
 }
 
 .agent-content-right ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 1px solid blue;
+  grid-template-columns: repeat(2, 160px);
+  /* border: 1px solid blue; */
 }
 
 .agent-content-right ul li:nth-child(1) {
   grid-column-start: 1;
   grid-column-end: 3;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .logo {
