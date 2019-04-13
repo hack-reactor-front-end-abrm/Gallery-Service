@@ -12,7 +12,7 @@ const NavBarOne = () => {
               <div className="buy-dropdown">
                 <div className="buy-content-left">
                   <ul>
-                    <li className="buy-content-left-header">Homes for Sale</li>
+                    <li>Homes for Sale</li>
                     <li>
                       <a href="#">Homes for sale</a>
                     </li>
@@ -63,7 +63,7 @@ const NavBarOne = () => {
               <div className="rent-dropdown">
                 <div className="rent-content-left">
                   <ul>
-                    <li className="rent-content-left-header">Las Vegas Rentals</li>
+                    <li>Las Vegas Rentals</li>
                     <li>
                       <a href="#">Rental Buildings</a>
                     </li>
@@ -84,7 +84,7 @@ const NavBarOne = () => {
 
                 <div className="rent-content-middle">
                   <ul>
-                    <li className="rent-content-middle-header">I'm a Rental Manager</li>
+                    <li>I'm a Rental Manager</li>
                     <li>
                       <a href="#">Sign in to see your listings</a>
                     </li>
@@ -102,7 +102,7 @@ const NavBarOne = () => {
 
                 <div className="rent-content-right">
                   <ul>
-                    <li className="rent-content-right-header">I'm a Renter</li>
+                    <li>I'm a Renter</li>
                     <li>
                       <a href="#">My rent payments</a>
                     </li>
@@ -123,7 +123,7 @@ const NavBarOne = () => {
               <div className="sell-dropdown">
                 <div className="sell-content-left">
                   <ul>
-                    <li className="sell-content-left-header">Selling tools</li>
+                    <li>Selling tools</li>
                     <li>
                       <a href="#">See your home's Zestimate</a>
                     </li>
@@ -162,7 +162,7 @@ const NavBarOne = () => {
               <div className="loans-dropdown">
                 <div className="loans-content-left">
                   <ul>
-                    <li className="loans-content-left-header">Shop Mortgages</li>
+                    <li>Shop Mortgages</li>
                     <li>
                       <a href="#">Mortgage lenders</a>
                     </li>
@@ -183,7 +183,7 @@ const NavBarOne = () => {
 
                 <div className="loans-content-middle">
                   <ul>
-                    <li className="loans-content-middle-header">Calculator</li>
+                    <li>Calculator</li>
                     <li>
                       <a href="#">Mortgage calculator</a>
                     </li>
@@ -204,7 +204,7 @@ const NavBarOne = () => {
 
                 <div className="loans-content-right">
                   <ul>
-                    <li className="loans-content-right-header">Resources</li>
+                    <li>Resources</li>
                     <li>
                       <a href="#">Lender reviews</a>
                     </li>

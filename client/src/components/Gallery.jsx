@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NavBarOne from './NavBarOne.jsx';
-import NavBarTwo from './NavBarTwo.jsx';
-import NavBarThree from './NavBarThree.jsx';
 import Slideshow from './Slideshow.jsx';
 import Lightbox from 'react-images';
 import css from './Gallery.css';
@@ -26,8 +24,7 @@ class Gallery extends Component {
   componentDidMount() {
     const { path } = this.state;
     axios
-      .get(`http://3.17.60.109:80/api/${path}`)
-      // .get(`http://localhost:3000/api/${path}`)
+      .get(`http://localhost:3000/api/${path}`)
       .then(({ data }) => {
         return Object.entries(data[0])
           .filter(listing => listing[0] !== 'id')
@@ -101,8 +98,6 @@ class Gallery extends Component {
       <>
         <div className="navbar-container">
           <NavBarOne />
-          {/* <NavBarTwo />
-          <NavBarThree /> */}
         </div>
         <Slideshow listings={listings} openLightbox={this.openLightbox} />
         <Lightbox
