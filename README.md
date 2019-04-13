@@ -3,7 +3,7 @@
 
 Full-stack recreation of the top NavBar and Image Gallery components of a listing on the Zillow website.
 
-<img src='https://giant.gfycat.com/OblongPiercingBlacklab.gif' height='80%' width='80%'>
+<img src='https://giant.gfycat.com/FatherlyPertinentGoral.gif' height='70%' width='80%'>
 
 
 # Technologies Used
