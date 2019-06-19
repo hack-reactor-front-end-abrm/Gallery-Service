@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const morgan = require('morgan');
-const { getDataFromDatabase, getListingByID } = require('../database/utils.js');
+const getListingByID = require('../database/helpers/getListingByID.js');
 
 const app = express();
 
@@ -21,8 +21,8 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/api/:id', (req, res) => {
-  getListingByID(req.params.id, (err, results) => {
-    res.send(results);
+  getListingByID(req.params.id).then(data => {
+    res.send(data.dataValues);
   });
 });
 
