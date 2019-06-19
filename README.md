@@ -26,6 +26,9 @@ Backend:
 
 * `npm install`
 
-* `npm run build`
-
 * `npm run start`
+
+* Navigate to http://localhost:3000/ followed up any number 1-100 to view a unique listing.
+  * eg: http://localhost:3000/45
+  * eg: http://localhost:3000/82, etc
+  
