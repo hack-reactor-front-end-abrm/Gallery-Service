@@ -14,15 +14,9 @@ app.get('/:number', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/'));
 });
 
-app.get('/api', (req, res) => {
-  getDataFromDatabase((err, results) => {
-    res.send(results);
-  });
-});
-
 app.get('/api/:id', (req, res) => {
-  getListingByID(req.params.id).then(data => {
-    res.send(data.dataValues);
+  getListingByID(req.params.id).then(({ dataValues: listingInfo }) => {
+    res.send(listingInfo);
   });
 });
 

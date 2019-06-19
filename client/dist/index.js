@@ -34684,7 +34684,7 @@ function (_Component) {
 
       _axios.default.get("/api/".concat(path)).then(function (_ref) {
         var data = _ref.data;
-        return Object.entries(data[0]).filter(function (listing) {
+        return Object.entries(data).filter(function (listing) {
           return listing[0] !== 'id';
         }).map(function (_ref2) {
           var _ref3 = _slicedToArray(_ref2, 2),

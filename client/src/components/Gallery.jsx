@@ -25,7 +25,7 @@ class Gallery extends Component {
     axios
       .get(`/api/${path}`)
       .then(({ data }) => {
-        return Object.entries(data[0])
+        return Object.entries(data)
           .filter(listing => listing[0] !== 'id')
           .map(([type, url]) => {
             if (type === 'exterior') {
