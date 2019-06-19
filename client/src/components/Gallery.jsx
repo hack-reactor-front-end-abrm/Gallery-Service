@@ -24,8 +24,8 @@ class Gallery extends Component {
     const { path } = this.state;
     axios
       .get(`/api/${path}`)
-      .then(({ data }) => {
-        return Object.entries(data)
+      .then(({ data: listingInfo }) => {
+        return Object.entries(listingInfo)
           .filter(listing => listing[0] !== 'id')
           .map(([type, url]) => {
             if (type === 'exterior') {
