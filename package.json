@@ -1,16 +1,15 @@
 {
-  "name": "test",
+  "name": "zeelow",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
     "initdb": "cd database/init; node initDatabase.js",
     "seeddb": "cd database/init; node seedDatabase.js",
     "database": "npm run initdb && npm run seeddb",
     "dev": "parcel client/src/index.js -d client/dist",
-    "build": "parcel build client/src/index.js -d client/dist",
-    "test": "jest"
+    "build": "parcel build client/src/index.js -d client/dist"
   },
   "keywords": [],
   "author": "",
