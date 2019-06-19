@@ -1,15 +1,9 @@
 const sqlite3 = require('sqlite3').verbose();
 const images = require('./images.js');
 
-const db = new sqlite3.Database('./database.sqlite', err => {
-  if (err) {
-    console.log('Error starting the SQLite database.');
-  } else {
-    console.log('Connected to SQLite database.');
-  }
-});
+const db = new sqlite3.Database('./database.sqlite');
 
-const randomImage = array => array[Math.floor(array.length * Math.random())];
+const randomImage = images => images[Math.floor(images.length * Math.random())];
 
 db.serialize(() => {
   db.run(`DROP TABLE IF EXISTS gallery`);
@@ -57,34 +51,7 @@ db.serialize(() => {
   for (let i = 0; i < 100; i++) {
     seed();
   }
-
-  // for (let i = 0; i < 100; i++) {
-  //   galleryInsert.run(
-  //     randomImage(images.exteriors),
-  //     'https://storage.googleapis.com/zillow-listing-pictures/googlemaps_static.png',
-  //     'https://storage.googleapis.com/zillow-listing-pictures/googlestreet_static.jpeg',
-  //     randomImage(images.interiors),
-  //     randomImage(images.interiors),
-  //     randomImage(images.interiors),
-  //     randomImage(images.interiors),
-  //     randomImage(images.interiors),
-  //     randomImage(images.interiors),
-  //     randomImage(images.interiors),
-  //     randomImage(images.interiors),
-  //     randomImage(images.interiors)
-  //   );
-  // }
-
   galleryInsert.finalize();
 });
 
-// db.close(err => {
-//   if (err) {
-//     console.log('Error closing SQLite database.');
-//   } else {
-//     console.log('Closed the SQLite database connection.');
-//   }
-// });
-
-console.log('sqlite.js is being ran');
 module.exports = db;

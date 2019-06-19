@@ -3,7 +3,6 @@ import axios from 'axios';
 import NavBarOne from './NavBarOne.jsx';
 import Slideshow from './Slideshow.jsx';
 import Lightbox from 'react-images';
-import css from './Gallery.css';
 
 class Gallery extends Component {
   constructor(props) {

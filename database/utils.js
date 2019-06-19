@@ -1,6 +1,6 @@
 const db = require('./sqlite.js');
 
-const getDataFromDatabase = callback => {
+module.exports.getDataFromDatabase = callback => {
   db.all(`SELECT * FROM gallery`, (err, results) => {
     if (err) {
       console.error(err);
@@ -10,7 +10,7 @@ const getDataFromDatabase = callback => {
   });
 };
 
-const getListingByID = (id, callback) => {
+module.exports.getListingByID = (id, callback) => {
   db.all(`SELECT * from gallery where id = ${id}`, (err, results) => {
     if (err) {
       console.error(err);
@@ -19,8 +19,3 @@ const getListingByID = (id, callback) => {
     }
   });
 };
-
-console.log('utils.js is being ran');
-
-module.exports.getDataFromDatabase = getDataFromDatabase;
-module.exports.getListingByID = getListingByID;

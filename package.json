@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/server.js",
-    "dev": "parcel client/src/index.html -d client/dist",
-    "build": "parcel build client/src/index.html -d client/dist",
+    "dev": "parcel client/src/index.js -d client/dist",
+    "build": "parcel build client/src/index.js -d client/dist",
     "test": "jest"
   },
   "keywords": [],
