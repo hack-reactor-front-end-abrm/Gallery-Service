@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "start": "npm run build && node server/server.js",
+    "start": "node server/server.js",
     "initdb": "cd database/init; node initDatabase.js",
     "seeddb": "cd database/init; node seedDatabase.js",
     "database": "npm run initdb && npm run seeddb",
