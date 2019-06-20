@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import NavBarOne from './NavBarOne.jsx';
-import Slideshow from './Slideshow.jsx';
-import Lightbox from 'react-images';
+import React, { Component } from "react";
+import axios from "axios";
+import NavBarOne from "./NavBarOne.jsx";
+import Slideshow from "./Slideshow.jsx";
+import Lightbox from "react-images";
 
 class Gallery extends Component {
   constructor(props) {
@@ -26,15 +26,15 @@ class Gallery extends Component {
       .get(`/api/${path}`)
       .then(({ data: listingInfo }) => {
         return Object.entries(listingInfo)
-          .filter(listing => listing[0] !== 'id')
+          .filter(listing => listing[0] !== "id")
           .map(([type, url]) => {
-            if (type === 'exterior') {
+            if (type === "exterior") {
               return {
                 src: url,
                 thumbnail: url,
                 thumbnailWidth: 550,
                 thumbnailHeight: 416,
-                caption: '$805,000 (2 beds, 2 baths, 989 sqft)'
+                caption: "$805,000 (2 beds, 2 baths, 989 sqft)"
               };
             } else {
               return {
@@ -42,7 +42,7 @@ class Gallery extends Component {
                 thumbnail: url,
                 thumbnailWidth: 278,
                 thumbnailHeight: 206,
-                caption: '$805,000 (2 beds, 2 baths, 989 sqft)'
+                caption: "$805,000 (2 beds, 2 baths, 989 sqft)"
               };
             }
           });
